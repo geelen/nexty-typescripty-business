@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default () => (
   <Outer>
-    About us
+    <span>About us</span>
     <Link href="/">
       <a>Home</a>
     </Link>
