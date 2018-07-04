@@ -1,10 +1,11 @@
 import Link from 'next/link'
+import {Outer} from "../components/Outer";
 
 export default () => (
-  <div>
-    Hello World.{' '}
+  <Outer>
+    <span>Hello World.</span>
     <Link href="/about">
       <a>About</a>
     </Link>
-  </div>
+  </Outer>
 )
