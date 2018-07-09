@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface PropTypes {
-  background: string
-}
-
 export const Outer = styled.div`
   background: #f7f7f7;
   display: flex;
@@ -18,8 +14,12 @@ export const Outer = styled.div`
   }
 `
 
+interface FrameProps {
+  background: string
+}
+
 export const Frame = styled(
-  ({ background, ...props }: { background: string }) => <div {...props} />
+  ({ background, ...props }: FrameProps) => <div {...props} />
 )`
   background: url("${props => props.background}") no-repeat 50% 50% / cover;
   width: 100vw;
