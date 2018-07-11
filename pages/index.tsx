@@ -1,27 +1,15 @@
 import Link from 'next/link'
-import { Outer, Frame } from '../components/Outer'
+import { Outer, Frame, FrameProps } from '../src/components/Outer'
 import React from 'react'
 import 'isomorphic-fetch'
+import { getRandomBackground } from '../src/utils/api'
 
-interface PropTypes {
-  background: string
-}
-
-export default class extends React.Component<PropTypes> {
-  static async getInitialProps({ req }): Promise<PropTypes> {
-    const response = await fetch('https://api.unsplash.com/photos/random', {
-      headers: {
-        'Authorization': 'Client-ID 82f8e4797dece60020f2cc66f5c51af06dbd28c6eaf956ba88cc75b209f925bf'
-      }
-    })
-    const json = await response.json()
-    // console.log(json)
-    return { background: json.urls.full }
-  }
+export default class extends React.Component<FrameProps> {
+  static getInitialProps = getRandomBackground
 
   render() {
     return (
-      <Frame background={this.props.background}>
+      <Frame background={this.props.background} color={this.props.color}>
         <Outer>
           <span>Hello World.</span>
           <Link href="/about">

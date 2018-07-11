@@ -14,14 +14,15 @@ export const Outer = styled.div`
   }
 `
 
-interface FrameProps {
-  background: string
+export interface FrameProps {
+  background: string,
+  color: string
 }
 
 export const Frame = styled(
   ({ background, ...props }: FrameProps) => <div {...props} />
 )`
-  background: url("${props => props.background}") no-repeat 50% 50% / cover;
+  background: ${props => props.color} url("${props => props.background}") no-repeat 50% 50% / cover;
   width: 100vw;
   min-height: 100vh;
   overflow: hidden;
