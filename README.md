@@ -36,5 +36,3 @@ yarn dev
 ## The idea behind the example
 
 Use the [@zeit/next-typescript](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript) plugin to inject the Webpack config required to compile TypeScript to JavaScript. For information about using a TSConfig have a [look at the plugin page](https://github.com/zeit/next-plugins/tree/master/packages/next-typescript/#readme).
-
-Small change for a PR
